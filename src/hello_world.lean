@@ -1,22 +1,22 @@
-/- Here is a theorem and proof.  If there was anything wrong 
-   with it then Lean would complain.  As the proof is correct,
-   Lean just accepts it silently.  To get more positive feedback,
-   we use #check, which essentially restates the theorem.
--/
+theorem one_plus_one : 1 + 1 ≤ 2 :=
+/-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This line states a theorem.  Note that we need a colon between the
+name of the theorem, and a := between the statement and the proof.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-/
+begin 
+ refl,
+end 
+/-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is the body of the proof.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-/
 
-theorem one_plus_one : 1 + 1 ≤ 2       /- state a theorem     -/
-:= begin                               /- introduce the proof -/
- apply refl                            /- body of the proof   -/
-end                                    /- conclude the proof  -/
-
-#check one_plus_one
-
-/-
+theorem one_plus_one_alt : 1 + 1 = 2 := rfl
+/-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  The above proof was written in tactic mode, as indicated by
  the keywords `begin` and `end`.  This mode is most appropriate 
  for long proofs with complex logical flow and many local 
  definitions, which is of course not the case here.  It would 
- be more efficient to use term mode, as in the proof below.
+ be more efficient to use term mode, as shown here.
  Note that the previous proof uses the word `refl`, which is
  the name of a proof tactic.  The current proof uses the word 
  `rfl`, which is the name of the fact that `x = x` for all `x`.
@@ -26,8 +26,7 @@ end                                    /- conclude the proof  -/
  called `refl` just applies the fact called `rfl` together with
  some similar facts (such as the fact that `n ≤ n` for all
  natural numbers `n`).
--/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-/
 
-theorem one_plus_one_alt : 1 + 1 = 2 := rfl
 
-#check one_plus_one_alt
+

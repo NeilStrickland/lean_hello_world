@@ -1,8 +1,8 @@
 [package]
 name = "hello_world"
 version = "0.1"
-lean_version = "nightly-2018-10-28"
+lean_version = "3.4.2"
 path = "src"
 
 [dependencies]
-mathlib = {git = "https://github.com/leanprover/mathlib", rev = "40fa9ade2f5649569639608db5e621e5fad0cc02"}
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "c7202e57149d15391c6ca6e5539424c95fcf58d5"}

@@ -243,3 +243,9 @@ def t : finset ℕ := {11,111,1111}
 #eval s ∪ t
 #eval (s ∩ t).card 
 
+
+variables {i n : ℕ} (h : i < n)
+variables {m : ℕ} (e : n = m)
+
+#check @eq.rec_on
+#reduce (eq.rec_on e (fin.mk i h) : fin m).val
